@@ -1,16 +1,15 @@
 console.log("Train Area:");
 
-// G-TASK
+// H-TASK
 
-function getHighestIndex(numbers) {
-    numbers.forEach((element, index) => {
-      if (element == Math.max(...numbers)) {
-        console.log("Ushbu 4, 67, 21, 3, 47, 80, 38 sonlarining eng kattasi:", element + " va uning indeksi: " + index);
-      }
-    });
+function getPositive(arr) {
+    return arr.filter(num => num > 0).join('');
   }
-  getHighestIndex([4, 67, 21, 3, 47, 80, 38]);
   
+  // Misol uchun
+  console.log(getPositive([1, -4, 2]));
+  console.log(getPositive([1, -4, 2, 5, -10]));
+  console.log(getPositive([-1, -16, 6, 27]));
+  console.log(getPositive([-19, -21,, 9, 101, 30]));
 
-
-console.log("Helllo World!");
+  
