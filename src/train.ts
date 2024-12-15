@@ -42,3 +42,10 @@ console.log("Train Area:");
   -Error handling
 
   */
+
+  /*
+    Traditional Api
+    Rest Api
+    GraphQL Api
+    ...
+  */

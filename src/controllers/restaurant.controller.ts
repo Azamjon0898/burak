@@ -1,9 +1,11 @@
 import { Request, Response } from "express";
 import { T } from "../libs/types/common";
 import MemberService from "../models/Member.service";
+import { MemberInput } from "../libs/types/member";
+import { MemberType } from "../libs/enums/member.enum";
 
 const restaurantController: T = {};
-restaurantController.goHome = (eq: Request, res: Response) => {
+restaurantController.goHome = (req: Request, res: Response) => {
     try {
         console.log("goHome");
         res.send("Home Page");
@@ -12,7 +14,7 @@ restaurantController.goHome = (eq: Request, res: Response) => {
     }
 }
 
-restaurantController.getLogin = (eq: Request, res: Response) => {
+restaurantController.getLogin = (req: Request, res: Response) => {
     try {
         console.log("getLogin");
         res.send("Login Page");
@@ -21,7 +23,7 @@ restaurantController.getLogin = (eq: Request, res: Response) => {
     }
 }
 
-restaurantController.getSignup = (eq: Request, res: Response) => {
+restaurantController.getSignup = (req: Request, res: Response) => {
     try {
         console.log("getSignup");
         res.send("Signup Page");
@@ -30,7 +32,7 @@ restaurantController.getSignup = (eq: Request, res: Response) => {
     }
 };
 
-restaurantController.processLogin = (eq: Request, res: Response) => {
+restaurantController.processLogin = (req: Request, res: Response) => {
     try {
         console.log("processLogin");
         res.send("DONE");
@@ -39,9 +41,16 @@ restaurantController.processLogin = (eq: Request, res: Response) => {
     }
 };
 
-restaurantController.processSignup = (eq: Request, res: Response) => {
+restaurantController.processSignup = async (req: Request, res: Response) => {
     try {
         console.log("processSignup");
+        console.log("body:", req.body);
+
+        const newMember: MemberInput = req.body;
+        newMember.memberType = MemberType.RESTAURANT;
+
+        const memberService = new MemberService();
+        await memberService.processSignup(newMember);
         res.send("DONE");
     } catch (err) {
         console.log("ERROR, processSignup:, err");
