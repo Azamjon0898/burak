@@ -1,6 +1,8 @@
+import {ObjectId} from "mongoose";
 import { memberStatus, MemberType } from "../enums/member.enum";
 
 export interface Member {
+    _id: ObjectId;
     memberType: MemberType;
     memberStatus: memberStatus;
     memberNick: string;

@@ -44,7 +44,6 @@ restaurantController.processLogin = (req: Request, res: Response) => {
 restaurantController.processSignup = async (req: Request, res: Response) => {
     try {
         console.log("processSignup");
-        console.log("body:", req.body);
 
         const newMember: MemberInput = req.body;
         newMember.memberType = MemberType.RESTAURANT;
@@ -54,6 +53,7 @@ restaurantController.processSignup = async (req: Request, res: Response) => {
         res.send("DONE");
     } catch (err) {
         console.log("ERROR, processSignup:, err");
+        res.send(err);
     }
 };
 

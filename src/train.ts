@@ -49,3 +49,25 @@ console.log("Train Area:");
     GraphQL Api
     ...
   */
+
+// I-TASK
+
+function majorityElement(arr: number[]): number | null {
+  const countMap: Record<number, number> = {};
+  let maxElement: number | null = null;
+  let maxCount = 0;
+
+  for (const num of arr) {
+      countMap[num] = (countMap[num] || 0) + 1;
+      if (countMap[num] > maxCount) {
+          maxCount = countMap[num];
+          maxElement = num;
+      }
+  }
+
+  return maxElement;
+}
+
+console.log(majorityElement([5, 3, 5, 2, 3, 4, 5, 9, 3, 4]));
+console.log(majorityElement([2, 5, 1, 2, 2, 8, 3, 3, 3]));
+console.log(majorityElement([9, 7, 7, 8, 1, 1]));
