@@ -50,24 +50,45 @@ console.log("Train Area:");
     ...
   */
 
-// I-TASK
+// // I-TASK
 
-function majorityElement(arr: number[]): number | null {
-  const countMap: Record<number, number> = {};
-  let maxElement: number | null = null;
-  let maxCount = 0;
+// function majorityElement(arr: number[]): number | null {
+//   const countMap: Record<number, number> = {};
+//   let maxElement: number | null = null;
+//   let maxCount = 0;
 
-  for (const num of arr) {
-      countMap[num] = (countMap[num] || 0) + 1;
-      if (countMap[num] > maxCount) {
-          maxCount = countMap[num];
-          maxElement = num;
-      }
-  }
+//   for (const num of arr) {
+//       countMap[num] = (countMap[num] || 0) + 1;
+//       if (countMap[num] > maxCount) {
+//           maxCount = countMap[num];
+//           maxElement = num;
+//       }
+//   }
 
-  return maxElement;
+//   return maxElement;
+// }
+
+// console.log(majorityElement([5, 3, 5, 2, 3, 4, 5, 9, 3, 4]));
+// console.log(majorityElement([2, 5, 1, 2, 2, 8, 3, 3, 3]));
+// console.log(majorityElement([9, 7, 7, 8, 1, 1]));
+
+// J-TASK
+
+function findLongestWord(sentence: string): string {
+  const words = sentence.split(" ");
+
+  const longestWord = words.reduce((longest, current) => {
+      return current.length > longest.length ? current : longest;
+  }, "");
+
+  return longestWord;
 }
 
-console.log(majorityElement([5, 3, 5, 2, 3, 4, 5, 9, 3, 4]));
-console.log(majorityElement([2, 5, 1, 2, 2, 8, 3, 3, 3]));
-console.log(majorityElement([9, 7, 7, 8, 1, 1]));
+const result = findLongestWord("나는 감정스러운 사람이다");
+console.log(result);
+
+const result2 = findLongestWord("Korean peoples are so kind");
+console.log(result2);
+
+const result3 = findLongestWord("O'zbekiston vatanim manim");
+console.log(result3);
