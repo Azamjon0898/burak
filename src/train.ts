@@ -72,23 +72,41 @@ console.log("Train Area:");
 // console.log(majorityElement([2, 5, 1, 2, 2, 8, 3, 3, 3]));
 // console.log(majorityElement([9, 7, 7, 8, 1, 1]));
 
-// J-TASK
+// // J-TASK
 
-function findLongestWord(sentence: string): string {
-  const words = sentence.split(" ");
+// function findLongestWord(sentence: string): string {
+//   const words = sentence.split(" ");
 
-  const longestWord = words.reduce((longest, current) => {
-      return current.length > longest.length ? current : longest;
-  }, "");
+//   const longestWord = words.reduce((longest, current) => {
+//       return current.length > longest.length ? current : longest;
+//   }, "");
 
-  return longestWord;
+//   return longestWord;
+// }
+
+// const result = findLongestWord("나는 감정스러운 사람이다");
+// console.log(result);
+
+// const result2 = findLongestWord("Korean peoples are so kind");
+// console.log(result2);
+
+// const result3 = findLongestWord("O'zbekiston vatanim manim");
+// console.log(result3);
+
+// K-TASK
+
+function countVowels(str: string): number {
+  const vowels = "aeiouAEIOU";
+  let count = 0;
+
+  for (const char of str) {
+      if (vowels.includes(char)) {
+          count++;
+      }
+  }
+
+  return count;
 }
 
-const result = findLongestWord("나는 감정스러운 사람이다");
-console.log(result);
-
-const result2 = findLongestWord("Korean peoples are so kind");
-console.log(result2);
-
-const result3 = findLongestWord("O'zbekiston vatanim manim");
-console.log(result3);
+console.log(countVowels("understand"));
+console.log(countVowels("Assalom Uzbekistan"));
