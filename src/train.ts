@@ -28,7 +28,8 @@ console.log("Train Area:");
 // const result2 = getDigits("m2456ion5jb5t");
 // console.log(result2);
 
-// const result3 = getDigits("n784n4j4n34h459b");
+
+// const result3 = getDigits("nn784n4j4n34h459b");
 // console.log(result3);
 // const result4 = getDigits("m8m34k4n9bb");
 // console.log(result4);
