@@ -2,6 +2,7 @@ console.log("Train Area:");
 
 // // H-TASK
 
+
 // function getPositive(arr) {
 //     return arr.filter(num => num > 0).join('');
 //   }
@@ -29,7 +30,7 @@ console.log("Train Area:");
 
 // const result3 = getDigits("n784n4j4n34h459b");
 // console.log(result3);
-// const result4 = getDigits("m8m34k4n9b");
+// const result4 = getDigits("m8m34k4n9bb");
 // console.log(result4);
 
 /* Project Standarts:
