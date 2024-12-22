@@ -31,8 +31,9 @@ console.log("Train Area:");
 
 // const result3 = getDigits("nn784n4j4n34h459b");
 // console.log(result3);
-// const result4 = getDigits("m8m34k4n9bb");
+// const result4 = getDigits("m8lm34k4n9bb");
 // console.log(result4);
+
 
 /* Project Standarts:
   -Logging standarts
