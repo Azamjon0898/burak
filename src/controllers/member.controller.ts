@@ -12,7 +12,7 @@ const memberController: T = {};
       console.log("signup"); 
       const input: MemberInput = req.body,
       result: Member = await memberService.signup(input);
-      // TOOD: TOKENS AUTHENTICATION
+      // TODO: TOKENS AUTHENTICATION
       
       res.json({ member: result });
         } catch (err) {
@@ -27,7 +27,7 @@ const memberController: T = {};
       console.log("login");
       const input: LoginInput = req.body,
        result = await memberService.login(input);
-    // TOOD: TOKENS AUTHENTICATION
+    // TODO: TOKENS AUTHENTICATION
 
       res.json({ member: result });
         } catch (err) {
