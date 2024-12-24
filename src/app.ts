@@ -11,7 +11,7 @@ import ConnectMongoDB from "connect-mongodb-session";
 const MongoDBStore = ConnectMongoDB(session);
 const store = new MongoDBStore({
     uri: String(process.env.MONGO_URL),
-    collection: 'sessions'
+    collection: "sessions",
   });
 
 /** 1-ENTRANCE **/
@@ -26,7 +26,7 @@ app.use(
     session({
         secret: String(process.env.SESSION_SECRET),
         cookie: {
-            maxAge: 1000 * 3600 * 3, // 3 h
+            maxAge: 1000 * 3600 * 6, // 6h
         },
         store: store,
         resave: true,
