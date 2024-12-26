@@ -114,23 +114,24 @@ console.log("Train Area:");
 // console.log(countVowels("understand"));
 // console.log(countVowels("Assalom Uzbekistan"));
 
-// L-TASK
+// // L-TASK
 
-function reverseSentence(sentence: string): string {
-  const words = sentence.split(" ");
-  const reversedWords = words.map(word => word.split("").reverse().join(""));
-  return reversedWords.join(" ");
-}
+// function reverseSentence(sentence: string): string {
+//   const words = sentence.split(" ");
+//   const reversedWords = words.map(word => word.split("").reverse().join(""));
+//   return reversedWords.join(" ");
+// }
 
-const input = ("We like coding");
-const result = reverseSentence(input);
-console.log(result);
+// const input = ("We like coding");
+// const result = reverseSentence(input);
+// console.log(result);
 
-const input2 = "I love Uzbekistan";
-const result2 = reverseSentence(input2);
-console.log(result2);
+// const input2 = "I love Uzbekistan";
+// const result2 = reverseSentence(input2);
+// console.log(result2);
 
-const input3 = "I am a coder not an engineer";
-const result3 = reverseSentence(input3);
-console.log(result3);
+// const input3 = "I am a coder not an engineer";
+// const result3 = reverseSentence(input3);
+// console.log(result3);
+
 
