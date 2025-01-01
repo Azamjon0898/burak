@@ -134,27 +134,43 @@ console.log("Train Area:");
 // const result3 = reverseSentence(input3);
 // console.log(result3);
 
-// M-TASK
+// // M-TASK
 
-type NumberSquare = {
-  number: number;
-  square: number;
-};
+// type NumberSquare = {
+//   number: number;
+//   square: number;
+// };
 
-function getSquareNumbers(numbers: number[]): NumberSquare[] {
-  return numbers.map(num => ({
-    number: num,
-    square: num * num,
-  }));
+// function getSquareNumbers(numbers: number[]): NumberSquare[] {
+//   return numbers.map(num => ({
+//     number: num,
+//     square: num * num,
+//   }));
+// }
+
+// const result = getSquareNumbers([1, 2, 3]);
+// console.log(result);
+
+// const result2 = getSquareNumbers([4, 5, 6]);
+// console.log(result2);
+
+// const result3 = getSquareNumbers([7, 8, 9]);
+// console.log(result3);
+
+// N-TASK
+
+function palindromCheck(input: string): boolean {
+  const cleanedInput = input.toLowerCase().replace(/[\W_]/g, "");
+
+  const reversedInput = cleanedInput.split("").reverse().join("");
+
+  return cleanedInput === reversedInput;
 }
 
-const result = getSquareNumbers([1, 2, 3]);
-console.log(result);
+console.log("Ona:", palindromCheck("Ona"));
+console.log("Qozoq:", palindromCheck("Qozoq"));
+console.log("Aziza:", palindromCheck("Aziza"));
+console.log("Hello:", palindromCheck("Hello"));
 
-const result2 = getSquareNumbers([4, 5, 6]);
-console.log(result2);
-
-const result3 = getSquareNumbers([7, 8, 9]);
-console.log(result3);
 
 
