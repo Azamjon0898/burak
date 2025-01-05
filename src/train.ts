@@ -157,20 +157,34 @@ console.log("Train Area:");
 // const result3 = getSquareNumbers([7, 8, 9]);
 // console.log(result3);
 
-// N-TASK
+// // N-TASK
 
-function palindromCheck(input: string): boolean {
-  const cleanedInput = input.toLowerCase().replace(/[\W_]/g, "");
+// function palindromCheck(input: string): boolean {
+//   const cleanedInput = input.toLowerCase().replace(/[\W_]/g, "");
 
-  const reversedInput = cleanedInput.split("").reverse().join("");
+//   const reversedInput = cleanedInput.split("").reverse().join("");
 
-  return cleanedInput === reversedInput;
+//   return cleanedInput === reversedInput;
+// }
+
+// console.log("Ona:", palindromCheck("Ona"));
+// console.log("Qozoq:", palindromCheck("Qozoq"));
+// console.log("Aziza:", palindromCheck("Aziza"));
+// console.log("Hello:", palindromCheck("Hello"));
+
+// O-TASK
+
+function calculateSumOfNumbers(arr: any[]): number {
+  return arr.reduce((sum, current) => {
+      return typeof current === 'number' ? sum + current : sum;
+  }, 0);
 }
 
-console.log("Ona:", palindromCheck("Ona"));
-console.log("Qozoq:", palindromCheck("Qozoq"));
-console.log("Aziza:", palindromCheck("Aziza"));
-console.log("Hello:", palindromCheck("Hello"));
+console.log(calculateSumOfNumbers([10, "10", {son: 10}, true, 35]));
+console.log(calculateSumOfNumbers([12, "2", {son: 5}, false, 98]));
+console.log(calculateSumOfNumbers([71, "20", {son: 1}, false, 18]));
+console.log(calculateSumOfNumbers([0, "101", {son: 9}, true, 2]));
+
 
 
 
