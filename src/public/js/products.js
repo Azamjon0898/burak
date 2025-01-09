@@ -33,14 +33,14 @@ $(function () {
       });
       const result = response.data;
       if (result.data) {
-        console.log("Product updated !");
+        console.log("Product updated!");
         $(".new-product-status").blur();
       } else {
-        console.log("Product updated !");
+        console.log("Product updated!");
       }
     } catch (err) {
       console.log(err);
-      alert("Product update failed");
+      alert("Product update failed!");
     }
   });
 });
