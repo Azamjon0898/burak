@@ -36,7 +36,7 @@ $(function () {
         console.log("Product updated!");
         $(".new-product-status").blur();
       } else {
-        console.log("Product updated!");
+        console.log("Product updated1!");
       }
     } catch (err) {
       console.log(err);
