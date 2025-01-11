@@ -1,9 +1,8 @@
 console.log("Products frontend javascript file");
-console.log("Products frontend javascript file");
+
 $(function () {
   $(".product-collection").on("change", () => {
     const selectedValue = $(".product-collection").val();
-
     if (selectedValue === "DRINK") {
       $("#product-collection").hide();
       $("#product-volume").show();
@@ -33,7 +32,6 @@ $(function () {
       });
       const result = response.data;
       if (result.data) {
-        console.log("Product updated!");
         $(".new-product-status").blur();
       } else {
         console.log("Product updated1!");
