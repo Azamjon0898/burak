@@ -53,6 +53,7 @@ console.log("Train Area:");
     ...
   */
 
+
 // // I-TASK
 
 // function majorityElement(arr: number[]): number | null {
@@ -75,6 +76,7 @@ console.log("Train Area:");
 // console.log(majorityElement([2, 5, 1, 2, 2, 8, 3, 3, 3]));
 // console.log(majorityElement([9, 7, 7, 8, 1, 1]));
 
+
 // // J-TASK
 
 // function findLongestWord(sentence: string): string {
@@ -96,6 +98,7 @@ console.log("Train Area:");
 // const result3 = findLongestWord("O'zbekiston vatanim manim");
 // console.log(result3);
 
+
 // // K-TASK
 
 // function countVowels(str: string): number {
@@ -113,6 +116,7 @@ console.log("Train Area:");
 
 // console.log(countVowels("understand"));
 // console.log(countVowels("Assalom Uzbekistan"));
+
 
 // // L-TASK
 
@@ -133,6 +137,7 @@ console.log("Train Area:");
 // const input3 = "I am a coder not an engineer";
 // const result3 = reverseSentence(input3);
 // console.log(result3);
+
 
 // // M-TASK
 
@@ -157,6 +162,7 @@ console.log("Train Area:");
 // const result3 = getSquareNumbers([7, 8, 9]);
 // console.log(result3);
 
+
 // // N-TASK
 
 // function palindromCheck(input: string): boolean {
@@ -172,6 +178,7 @@ console.log("Train Area:");
 // console.log("Aziza:", palindromCheck("Aziza"));
 // console.log("Hello:", palindromCheck("Hello"));
 
+
 // // O-TASK
 
 // function calculateSumOfNumbers(arr: any[]): number {
@@ -185,18 +192,30 @@ console.log("Train Area:");
 // console.log(calculateSumOfNumbers([71, "20", {son: 1}, false, 18]));
 // console.log(calculateSumOfNumbers([0, "101", {son: 9}, true, 2]));
 
-// P-TASK
 
-function objectToArray(objectBox: any) {
-  let obj = Object.entries(objectBox);
-  let result: any = [];
-  obj.map((value, index) => {
-    result.push(value);
-  });
-  return result;
+// // P-TASK
+
+// function objectToArray(objectBox: any) {
+//   let obj = Object.entries(objectBox);
+//   let result: any = [];
+//   obj.map((value, index) => {
+//     result.push(value);
+//   });
+//   return result;
+// }
+
+// console.log(objectToArray({ a: 10, b: 20 }));
+
+
+// Q-TASK
+
+function hasProperty<T extends object>(obj: T, prop: string): boolean {
+  return prop in obj;
 }
 
-console.log(objectToArray({ a: 10, b: 20 }));
+console.log(hasProperty({ name: "BMW", model: "M3", color: "BLACK" }, "color"));
+console.log(hasProperty({ name: "BOEING", model: "707", year: "2025" }, "year"));
+console.log(hasProperty({ name: "CHINA", language: "CHINESE", population: "1.4bln" }, "square"));
 
 
 
