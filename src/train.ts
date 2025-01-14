@@ -207,15 +207,43 @@ console.log("Train Area:");
 // console.log(objectToArray({ a: 10, b: 20 }));
 
 
-// Q-TASK
+// // Q-TASK
 
-function hasProperty<T extends object>(obj: T, prop: string): boolean {
-  return prop in obj;
+// function hasProperty<T extends object>(obj: T, prop: string): boolean {
+//   return prop in obj;
+// }
+
+// console.log(hasProperty({ name: "BMW", model: "M3", color: "BLACK" }, "color"));
+// console.log(hasProperty({ name: "BOEING", model: "707", year: "2025" }, "year"));
+// console.log(hasProperty({ name: "CHINA", language: "CHINESE", population: "1.4bln" }, "square"));
+
+
+// R-TASK
+
+function calculate(expression: string): number {
+  const parts = expression.split(' ').filter(Boolean);
+  const num1 = parseFloat(parts[0]);
+  const operator = parts[1];
+  const num2 = parseFloat(parts[2]);
+
+  switch (operator) {
+    case '+':
+      return num1 + num2;
+    case '-':
+      return num1 - num2;
+    case '*':
+      return num1 * num2;
+    case '/':
+      return num2 !== 0 ? num1 / num2 : NaN;
+    default:
+      throw new Error('Invalid operator');
+  }
 }
 
-console.log(hasProperty({ name: "BMW", model: "M3", color: "BLACK" }, "color"));
-console.log(hasProperty({ name: "BOEING", model: "707", year: "2025" }, "year"));
-console.log(hasProperty({ name: "CHINA", language: "CHINESE", population: "1.4bln" }, "square"));
+console.log(calculate("1 + 3"));
+console.log(calculate("10 - 2"));
+console.log(calculate("4 * 5"));
+console.log(calculate("20 / 4"));
 
 
 
