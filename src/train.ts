@@ -218,33 +218,49 @@ console.log("Train Area:");
 // console.log(hasProperty({ name: "CHINA", language: "CHINESE", population: "1.4bln" }, "square"));
 
 
-// R-TASK
+// // R-TASK
 
-function calculate(expression: string): number {
-  const parts = expression.split(' ').filter(Boolean);
-  const num1 = parseFloat(parts[0]);
-  const operator = parts[1];
-  const num2 = parseFloat(parts[2]);
+// function calculate(expression: string): number {
+//   const parts = expression.split(' ').filter(Boolean);
+//   const num1 = parseFloat(parts[0]);
+//   const operator = parts[1];
+//   const num2 = parseFloat(parts[2]);
 
-  switch (operator) {
-    case '+':
-      return num1 + num2;
-    case '-':
-      return num1 - num2;
-    case '*':
-      return num1 * num2;
-    case '/':
-      return num2 !== 0 ? num1 / num2 : NaN;
-    default:
-      throw new Error('Invalid operator');
+//   switch (operator) {
+//     case '+':
+//       return num1 + num2;
+//     case '-':
+//       return num1 - num2;
+//     case '*':
+//       return num1 * num2;
+//     case '/':
+//       return num2 !== 0 ? num1 / num2 : NaN;
+//     default:
+//       throw new Error('Invalid operator');
+//   }
+// }
+
+// console.log(calculate("1 + 3"));
+// console.log(calculate("10 - 2"));
+// console.log(calculate("4 * 5"));
+// console.log(calculate("20 / 4"));
+
+
+// S-TASK
+
+function missingNumber(arr: number[]) {
+  arr.sort();
+  for (let i = 1; i < arr.length; i++) {
+    const diff = arr[i] - arr[i-1];
+    if (diff > 1) {
+      return arr[i-1] + 1;
+    }
   }
 }
 
-console.log(calculate("1 + 3"));
-console.log(calculate("10 - 2"));
-console.log(calculate("4 * 5"));
-console.log(calculate("20 / 4"));
-
+console.log(missingNumber([0, 2, 3]));
+console.log(missingNumber([6, 5, 8]));
+console.log(missingNumber([9, 8, 6]));
 
 
 
