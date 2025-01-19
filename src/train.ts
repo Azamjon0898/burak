@@ -246,22 +246,32 @@ console.log("Train Area:");
 // console.log(calculate("20 / 4"));
 
 
-// S-TASK
+// // S-TASK
 
-function missingNumber(arr: number[]) {
-  arr.sort();
-  for (let i = 1; i < arr.length; i++) {
-    const diff = arr[i] - arr[i-1];
-    if (diff > 1) {
-      return arr[i-1] + 1;
-    }
-  }
+// function missingNumber(arr: number[]) {
+//   arr.sort();
+//   for (let i = 1; i < arr.length; i++) {
+//     const diff = arr[i] - arr[i-1];
+//     if (diff > 1) {
+//       return arr[i-1] + 1;
+//     }
+//   }
+// }
+
+// console.log(missingNumber([0, 2, 3]));
+// console.log(missingNumber([6, 5, 8]));
+// console.log(missingNumber([9, 8, 6]));
+
+
+// T-TASK 
+
+function mergeSortedArrays(arr1: number[], arr2: number[]): number[] {
+  let mergedArray = [...arr1, ...arr2]; 
+  mergedArray.sort((a, b) => a - b); 
+  return mergedArray;
 }
 
-console.log(missingNumber([0, 2, 3]));
-console.log(missingNumber([6, 5, 8]));
-console.log(missingNumber([9, 8, 6]));
-
-
+const result = mergeSortedArrays([0, 3, 4, 31], [4, 6, 30]);
+console.log(result);
 
 
