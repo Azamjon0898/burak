@@ -263,15 +263,24 @@ console.log("Train Area:");
 // console.log(missingNumber([9, 8, 6]));
 
 
-// T-TASK 
+// // T-TASK 
 
-function mergeSortedArrays(arr1: number[], arr2: number[]): number[] {
-  let mergedArray = [...arr1, ...arr2]; 
-  mergedArray.sort((a, b) => a - b); 
-  return mergedArray;
+// function mergeSortedArrays(arr1: number[], arr2: number[]): number[] {
+//   let mergedArray = [...arr1, ...arr2]; 
+//   mergedArray.sort((a, b) => a - b); 
+//   return mergedArray;
+// }
+
+// const result = mergeSortedArrays([0, 3, 4, 31], [4, 6, 30]);
+// console.log(result);
+
+
+// U-TASK 
+
+function sumOdds(num: number) {
+  return Math.floor(num / 2);
 }
 
-const result = mergeSortedArrays([0, 3, 4, 31], [4, 6, 30]);
-console.log(result);
-
-
+console.log(sumOdds(9));
+console.log(sumOdds(11));
+console.log(sumOdds(12));
