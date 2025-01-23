@@ -275,12 +275,31 @@ console.log("Train Area:");
 // console.log(result);
 
 
-// U-TASK 
+// // U-TASK 
 
-function sumOdds(num: number) {
-  return Math.floor(num / 2);
+// function sumOdds(num: number) {
+//   return Math.floor(num / 2);
+// }
+
+// console.log(sumOdds(9));
+// console.log(sumOdds(11));
+// console.log(sumOdds(12));
+
+
+// V-TASK
+
+function countChars(word: string) {
+  const count: { [key: string]: number } = {};
+  for (let char of word) {
+    if (char in count) {
+      count[char]++;
+    } else {
+      count[char] = 1;
+    }
+  }
+  return count;
 }
 
-console.log(sumOdds(9));
-console.log(sumOdds(11));
-console.log(sumOdds(12));
+console.log(countChars("hello"));
+console.log(countChars("salom"));
+console.log(countChars("avtomobil"))
