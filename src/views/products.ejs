@@ -18,7 +18,8 @@
         <li
           class="nav-item"
           style="cursor: pointer"
-          onclick="return confirm('Do you want to logout?')">
+          onclick="return confirm('Do you want to logout?')"
+        >
           <a class="nav-link" href="/admin/logout">Logout</a>
         </li>
       </ul>
@@ -43,34 +44,37 @@
               </tr>
             </thead>
             <!--  LOOP PRODUCTS: START  -->
-            <% products.map(function(value,key){%>
+            <% products.map(function(value, key){ %>
             <tbody style="background: white">
-              <td><%=key + 1%></td>
-              <td><%=value.productName %></td>
-              <td><%=value.productCollection %></td>
+              <td><%= key + 1%></td>
+              <td><%= value.productName %></td>
+              <td><%= value.productCollection %></td>
+
               <td>
-                <%=value.productCollection === 'DRINK' ? value.productVolume :
+                <%= value.productCollection === 'DRINK'? value.productVolume :
                 value.productSize %>
               </td>
-              <td><%=value.productPrice %></td>
-              <td><%=value.productLeftCount %></td>
+              <td><%= value.productPrice %></td>
+              <td><%= value.productLeftCount %></td>
               <td>
                 <select
                   class="spec-select new-product-status"
-                  id="<%= value._id%>">
-                  <option value="PAUSE" <%= value.productStatus === "PAUSE" ? 'selected':'' %>>PAUSE</option>
-                  <option value="PROCESS" <%= value.productStatus === "PROCESS" ? 'selected':'' %>>PROCESS</option>
-                  <option value="DELETE" <%= value.productStatus === "DELETE" ? 'selected':'' %>>DELETE</option>
+                  id="<%=value._id%>"
+                >
+                  <option value="PAUSE" <%= value.productStatus === "PAUSE"? "selected" : '' %>>PAUSE</option>
+                  <option value="PROCESS"<%= value.productStatus === "PROCESS"? "selected" : '' %>>PROCESS</option>
+                  <option value="DELETE"<%= value.productStatus === "DELETE"? "selected" : '' %>>DELETE</option>
                 </select>
               </td>
             </tbody>
-            <%})%>
 
+            <% })%>
             <!--  LOOP PRODUCTS: END  -->
           </table>
           <div
             class="long-input"
-            style="align-items: flex-end; margin-bottom: 25px">
+            style="align-items: flex-end; margin-bottom: 25px"
+          >
             <button class="btn btn-primary" id="process-btn">
               New Product
             </button>
@@ -82,7 +86,8 @@
           action="/admin/product/create"
           method="POST"
           class="dish-container"
-          enctype="multipart/form-data">
+          enctype="multipart/form-data"
+        >
           <div class="long-input" style="display: flex; align-items: center">
             <span class="new-dish-txt">NEW PRODUCT DETAIL</span>
           </div>
@@ -93,13 +98,15 @@
                 type="text"
                 placeholder="Name"
                 name="productName"
-                class="product-name" />
+                class="product-name"
+              />
             </div>
             <input
               name="productStatus"
               value="PAUSE"
               class="product-status"
-              hidden />
+              hidden
+            />
           </div>
           <div class="half-input-frame">
             <div class="half-input">
@@ -108,7 +115,8 @@
                 type="number"
                 placeholder="Price"
                 name="productPrice"
-                class="product-price" />
+                class="product-price"
+              />
             </div>
             <div class="half-input">
               <label>Product Left Counts</label>
@@ -116,7 +124,8 @@
                 type="number"
                 placeholder="Counts"
                 name="productLeftCount"
-                class="product-left-count" />
+                class="product-left-count"
+              />
             </div>
           </div>
           <div class="half-input-frame">
@@ -167,8 +176,9 @@
                   id="file"
                   name="productImages"
                   class="image-one"
+                  required
                   onchange="previewFileHandler(this, 1)"
-                   />
+                />
               </div>
               <div class="upload-img-box">
                 <img src="/img/upload.svg" class="2" id="image-section-2" />
@@ -176,8 +186,10 @@
                   type="file"
                   id="file"
                   name="productImages"
-                  class="image-two" 
-                  onchange="previewFileHandler(this, 2)"/>
+                  class="image-two"         
+                  onchange="previewFileHandler(this, 2)"
+
+                />
               </div>
               <div class="upload-img-box">
                 <img src="/img/upload.svg" class="3" id="image-section-3" />
@@ -185,7 +197,10 @@
                   type="file"
                   id="file"
                   name="productImages"
-                  class="image-three"  onchange="previewFileHandler(this, 3)"/>
+                  class="image-three"
+                  onchange="previewFileHandler(this, 3)"
+
+                />
               </div>
               <div class="upload-img-box">
                 <img src="/img/upload.svg" class="4" id="image-section-4" />
@@ -193,17 +208,23 @@
                   type="file"
                   id="file"
                   name="productImages"
-                  class="image-four"  onchange="previewFileHandler(this, 4)"/>
+                  class="image-four"                  
+                  onchange="previewFileHandler(this, 4)"
+
+                />
               </div>
               <div class="upload-img-box">
-                <img src="/img/upload.svg" class="5" id="image-section-5"  />
+                <img src="/img/upload.svg" class="5" id="image-section-5" />
                 <input
                   type="file"
                   id="file"
                   name="productImages"
-                  class="image-five" />
+                  class="image-five"                  
+                  onchange="previewFileHandler(this, 5)"
+
+                />
               </div>
-              <input name="restaurantIid" class="restaurant-id"  onchange="previewFileHandler(this, 5)" hidden />
+              <input name="restaurantIid" class="restaurant-id" hidden />
             </div>
           </div>
 
@@ -219,6 +240,7 @@
   </div>
 
   <script type="text/javascript" src="/js/products.js"></script>
+
 </body>
 
 <%- include('includes/footer') %>

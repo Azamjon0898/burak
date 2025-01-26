@@ -8,21 +8,21 @@ import makeUploader from "./libs/utils/uploader";
 routerAdmin.get("/", restaurantController.goHome);
 routerAdmin
   .get("/login", restaurantController.getLogin)
-  .post("/login", restaurantController.processLogin);   
+  .post("/login", restaurantController.processLogin);
 routerAdmin
-  .get("/signup",restaurantController.getSignup)
+  .get("/signup", restaurantController.getSignup)
   .post(
-    "/signup", 
-    makeUploader("members").single("memberImage"), 
+    "/signup",
+    makeUploader("members").single("memberImage"),
     restaurantController.processSignup
   );
-routerAdmin.get("/logout",restaurantController.logout);
+routerAdmin.get("/logout", restaurantController.logout);
 routerAdmin.get("/check-me", restaurantController.checkAuthSession);
 
 /** Product */
 routerAdmin.get(
-  "/product/all", 
-  restaurantController.verifyRestaurant, 
+  "/product/all",
+  restaurantController.verifyRestaurant,
   productController.getAllProducts
 );
 routerAdmin.post(
@@ -33,21 +33,19 @@ routerAdmin.post(
 );
 routerAdmin.post(
   "/product/:id",
-  restaurantController.verifyRestaurant, 
+  restaurantController.verifyRestaurant,
   productController.updateChosenProduct
 );
 
-
 /** User */
 routerAdmin.get(
-  "/user/all", 
-  restaurantController.verifyRestaurant, 
+  "/user/all",
+  restaurantController.verifyRestaurant,
   restaurantController.getUsers
 );
 routerAdmin.post(
-  "/user/edit", 
-  restaurantController.verifyRestaurant, 
+  "/user/edit/",
+  restaurantController.verifyRestaurant,
   restaurantController.updateChosenUser
 );
-
 export default routerAdmin;
