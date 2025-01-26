@@ -286,20 +286,33 @@ console.log("Train Area:");
 // console.log(sumOdds(12));
 
 
-// V-TASK
+// // V-TASK
 
-function countChars(word: string) {
-  const count: { [key: string]: number } = {};
-  for (let char of word) {
-    if (char in count) {
-      count[char]++;
-    } else {
-      count[char] = 1;
-    }
+// function countChars(word: string) {
+//   const count: { [key: string]: number } = {};
+//   for (let char of word) {
+//     if (char in count) {
+//       count[char]++;
+//     } else {
+//       count[char] = 1;
+//     }
+//   }
+//   return count;
+// }
+
+// console.log(countChars("hello"));
+// console.log(countChars("salom"));
+// console.log(countChars("avtomobil"))
+
+
+// W-TASK
+
+function chunkArray(arr: number[], size: number) {
+  const result = [];
+  for (let i = 0; i < arr.length; i += size) {
+    result.push(arr.slice(i, i + size));
   }
-  return count;
+  return result;
 }
 
-console.log(countChars("hello"));
-console.log(countChars("salom"));
-console.log(countChars("avtomobil"))
+console.log(chunkArray([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 3));
