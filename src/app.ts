@@ -52,3 +52,4 @@ app.use("/admin", routerAdmin); // BSSR: EJS
 app.use("/", router); // SPA: REACT
 
 export default app;
+

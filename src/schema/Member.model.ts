@@ -55,3 +55,4 @@ memberPoints: {
 
 
 export default mongoose.model("Member", memberSchema);
+

@@ -69,3 +69,4 @@ productSchema.index(
     { unique: true }
 );
 export default mongoose.model("Product", productSchema);
+
