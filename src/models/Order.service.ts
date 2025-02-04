@@ -23,7 +23,7 @@ class OrderService {
     this.orderItemModel = OrderItemModel;
     this.memberService = new MemberService();
   }
-  
+
 
   public async createOrder(
     member: Member,
@@ -78,7 +78,7 @@ class OrderService {
     const result = await this.orderModel
       .aggregate([
         { $match: matches },
-        { $sort: { updateAt: -1 } },
+        { $sort: { updatedAt: -1 } },
         { $skip: (inquiry.page - 1) * inquiry.limit },
         { $limit: inquiry.limit },
         {
