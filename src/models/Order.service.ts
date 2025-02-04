@@ -23,6 +23,7 @@ class OrderService {
     this.orderItemModel = OrderItemModel;
     this.memberService = new MemberService();
   }
+  
 
   public async createOrder(
     member: Member,

@@ -17,6 +17,7 @@ import { ViewGroup } from "../libs/enums/view.enum";
 class ProductServise {
     private readonly productModel;
     public viewService;
+    
 
     constructor() {
         this.productModel = ProductModel;
