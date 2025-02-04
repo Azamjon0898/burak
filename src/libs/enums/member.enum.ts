@@ -1,6 +1,6 @@
-export enum MemberType{
-    USER='USER',
-    RESTAURANT= 'RESTAURANT',
+export enum MemberType {
+    USER = "USER",
+    RESTAURANT = "RESTAURANT",
 }
 
 export enum MemberStatus {
@@ -8,3 +8,4 @@ export enum MemberStatus {
     BLOCK = "BLOCK",
     DELETE = "DELETE",
 }
+

@@ -1,78 +1,88 @@
-import { T } from "./libs/types/common";
-// Y-TASK:
-// Shunday function yozing, uni 2 ta array parametri bolsin.
-// Function ikkala arrayda ham ishtirok etgan qiymatlarni bir arrayda qaytarsin
-// MASALAN: findIntersection([1,2,3], [3,2,0]) return [2,3]
-console.log("Y-TASK");
-function findIntersection(arr1: number[], arr2: number[]): number[] {
-  arr1.sort();
-  arr2.sort();
-  const result: number[] = [];
-  let [i, j] = [0, 0];
+// Z-TASK
 
-  while (arr1[i] != undefined && arr2[j] != undefined) {
-    if (arr1[i] == arr2[j]) {
-      if (!result.includes(arr1[i])) {
-        result.push(arr1[i]);
-      }
-      i++;
-      j++;
-    } else if (arr1[i] > arr2[j]) {
-      j++;
-    } else {
-      i++;
-    }
-  }
-  return result;
+function sumEvens(arr: number[]): number {
+  return arr
+      .filter((num: number) => num % 2 === 0)
+      .reduce((sum: number, num: number) => sum + num, 0);
 }
 
+console.log(sumEvens([1, 2, 3]));
+console.log(sumEvens([1, 2, 3, 2]));
+console.log(sumEvens([5, 7, 9]));
+console.log(sumEvens([10, 20, 30]));
 
-console.log(findIntersection([1, 2, 3], [3, 2, 0])); // return [2,3]
-console.log(findIntersection([], [1, 2, 3])); // []
-console.log(findIntersection([1, 2, 3, 4], [4, 5, 6, 7])); // [4]
-console.log(findIntersection([1, 7, 1, 2, 2], [2, 2, 7])); // [2, 7]
+// import { T } from "./libs/types/common";
+// // Y-TASK:
+// console.log("Y-TASK");
+// function findIntersection(arr1: number[], arr2: number[]): number[] {
+//   arr1.sort();
+//   arr2.sort();
+//   const result: number[] = [];
+//   let [i, j] = [0, 0];
 
-// X-TASK:
-//  Shunday function yozing, uni object va string prapetrlari bolsin.
-// Function string parametri object ichida necha marotaba takrorlanganligini qaytarsin (nested object bolsa ham sanasin)
-//  MASALAN: countOccurrences({model: 'Bugatti', steer: {model: 'HANKOOK', size: 30}}, 'model') return 2
-console.log("X-TASK");
-function countOccurrences(obj: T, word: string): number {
-  return Object.entries(obj).reduce((count, [key, val]) => {
-    // check key
-    count += key === word ? 1 : 0;
+//   while (arr1[i] != undefined && arr2[j] != undefined) {
+//     if (arr1[i] == arr2[j]) {
+//       if (!result.includes(arr1[i])) {
+//         result.push(arr1[i]);
+//       }
+//       i++;
+//       j++;
+//     } else if (arr1[i] > arr2[j]) {
+//       j++;
+//     } else {
+//       i++;
+//     }
+//   }
+//   return result;
+// }
 
-    // check value
-    if (val && val instanceof Object) {
-      count += countOccurrences(val, word);
-    }
-    return count;
-  }, 0);
-}
 
-console.log(
-  countOccurrences(
-    { model: "Bugatti", steer: { model: "HANKOOK", size: 30 } },
-    "model"
-  )
-); // return 2
+// console.log(findIntersection([1, 2, 3], [3, 2, 0])); // return [2,3]
+// console.log(findIntersection([], [1, 2, 3])); // []
+// console.log(findIntersection([1, 2, 3, 4], [4, 5, 6, 7])); // [4]
+// console.log(findIntersection([1, 7, 1, 2, 2], [2, 2, 7])); // [2, 7]
 
-console.log(
-  countOccurrences(
-    {
-      model: "Bugatti",
-      steer: { model: "HANKOOK", size: 30 },
-      motor: {
-        model: {
-          model: "Agata",
-          production: { model: "gg777", country: "Italy" },
-        },
-        year: 1999,
-      },
-    },
-    "model"
-  )
-); // return 5
+// // X-TASK:
+// //  Shunday function yozing, uni object va string prapetrlari bolsin.
+// // Function string parametri object ichida necha marotaba takrorlanganligini qaytarsin (nested object bolsa ham sanasin)
+// //  MASALAN: countOccurrences({model: 'Bugatti', steer: {model: 'HANKOOK', size: 30}}, 'model') return 2
+// console.log("X-TASK");
+// function countOccurrences(obj: T, word: string): number {
+//   return Object.entries(obj).reduce((count, [key, val]) => {
+//     // check key
+//     count += key === word ? 1 : 0;
+
+//     // check value
+//     if (val && val instanceof Object) {
+//       count += countOccurrences(val, word);
+//     }
+//     return count;
+//   }, 0);
+// }
+
+// console.log(
+//   countOccurrences(
+//     { model: "Bugatti", steer: { model: "HANKOOK", size: 30 } },
+//     "model"
+//   )
+// ); // return 2
+
+// console.log(
+//   countOccurrences(
+//     {
+//       model: "Bugatti",
+//       steer: { model: "HANKOOK", size: 30 },
+//       motor: {
+//         model: {
+//           model: "Agata",
+//           production: { model: "gg777", country: "Italy" },
+//         },
+//         year: 1999,
+//       },
+//     },
+//     "model"
+//   )
+// ); // return 5
 
 // W-TASK:
 //  Shunday function yozing, uni array va number parametrlari bolsin.
