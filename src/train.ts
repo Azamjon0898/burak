@@ -1,5 +1,5 @@
 // Z-TASK
-
+console.log("Z-TASK:");
 function sumEvens(arr: number[]): number {
   return arr
       .filter((num: number) => num % 2 === 0)
@@ -10,6 +10,7 @@ console.log(sumEvens([1, 2, 3]));
 console.log(sumEvens([1, 2, 3, 2]));
 console.log(sumEvens([5, 7, 9]));
 console.log(sumEvens([10, 20, 30]));
+
 
 // import { T } from "./libs/types/common";
 // // Y-TASK:
