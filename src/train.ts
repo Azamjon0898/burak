@@ -1,15 +1,30 @@
-// Z-TASK
-console.log("Z-TASK:");
-function sumEvens(arr: number[]): number {
-  return arr
-      .filter((num: number) => num % 2 === 0)
-      .reduce((sum: number, num: number) => sum + num, 0);
+// ZA-TASK
+
+type Person = { age: number };
+
+function sortByAge(arr: Person[]): Person[] {
+  return arr.sort((a, b) => a.age - b.age);
 }
 
-console.log(sumEvens([1, 2, 3]));
-console.log(sumEvens([1, 2, 3, 2]));
-console.log(sumEvens([5, 7, 9]));
-console.log(sumEvens([10, 20, 30]));
+const people = [{ age: 23 }, { age: 21 }, { age: 13 }];
+const sortedPeople = sortByAge(people);
+
+console.log(sortedPeople);
+
+
+
+// // Z-TASK
+// console.log("Z-TASK:");
+// function sumEvens(arr: number[]): number {
+//   return arr
+//       .filter((num: number) => num % 2 === 0)
+//       .reduce((sum: number, num: number) => sum + num, 0);
+// }
+
+// console.log(sumEvens([1, 2, 3]));
+// console.log(sumEvens([1, 2, 3, 2]));
+// console.log(sumEvens([5, 7, 9]));
+// console.log(sumEvens([10, 20, 30]));
 
 
 // import { T } from "./libs/types/common";
