@@ -1,15 +1,26 @@
-// ZA-TASK
+// ZB-TASK
 
-type Person = { age: number };
-
-function sortByAge(arr: Person[]): Person[] {
-  return arr.sort((a, b) => a.age - b.age);
+function celsiusToFahrenheit(celsius: number): number {
+  return (celsius * 9/5) + 32;
 }
 
-const people = [{ age: 23 }, { age: 21 }, { age: 13 }];
-const sortedPeople = sortByAge(people);
+console.log(celsiusToFahrenheit(0));
+console.log(celsiusToFahrenheit(25));
+console.log(celsiusToFahrenheit(-10));
 
-console.log(sortedPeople);
+
+// // ZA-TASK
+
+// type Person = { age: number };
+
+// function sortByAge(arr: Person[]): Person[] {
+//   return arr.sort((a, b) => a.age - b.age);
+// }
+
+// const people = [{ age: 23 }, { age: 21 }, { age: 13 }];
+// const sortedPeople = sortByAge(people);
+
+// console.log(sortedPeople);
 
 
 
