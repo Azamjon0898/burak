@@ -5,7 +5,7 @@ import uploader from "./libs/utils/uploader";
 import productController from "./controllers/product.controller";
 import orderController from "./controllers/order.controller";
 
-/** Member **/
+// Member
 router.get("/member/restaurant", memberController.getRestaurant);
 router.post("/member/login", memberController.login);
 router.post("/member/signup", memberController.signup);
@@ -25,9 +25,10 @@ router.post(
   uploader("members").single("memberImage"),
   memberController.updateMember
 );
+
 router.get("/member/top-users", memberController.getTopUsers);
 
-/** Product **/
+// Product
 router.get("/product/all", productController.getProducts);
 router.get(
   "/product/:id",
@@ -35,7 +36,7 @@ router.get(
   productController.getProduct
 );
 
-/** Order **/
+// Order
 router.post(
   "/order/create",
   memberController.verifyAuth,
@@ -47,10 +48,8 @@ router.get(
   orderController.getMyOrders
 );
 router.post(
-  "/order/update",
+  "/order/update/",
   memberController.verifyAuth,
   orderController.updateOrder
 );
-
 export default router;
-

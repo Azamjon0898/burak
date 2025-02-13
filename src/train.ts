@@ -1,46 +1,64 @@
-// ZB-TASK
+import { T } from "./libs/types/common";
+// ZD-TASK:
 
-function celsiusToFahrenheit(celsius: number): number {
-  return (celsius * 9/5) + 32;
+// Shunday function yozing, uni number, array va number parametrlari bolsin
+// va berilgan 1-parametr numberga teng indexni array ichidan topib 3-parametrdagi raqam bilan almashtirib yangilangan arrayni qaytarsin
+// MASALAN: changeNumberInArray(1, [1,3,7,2], 2) return [1,2,7,2]
+function changeNumberInArray(
+  idx: number,
+  arr: number[],
+  new_ele: number
+): number[] {
+  arr[idx] = new_ele;
+  return arr;
 }
 
-console.log(celsiusToFahrenheit(0));
-console.log(celsiusToFahrenheit(25));
-console.log(celsiusToFahrenheit(-10));
-
-
-// // ZA-TASK
-
-// type Person = { age: number };
-
-// function sortByAge(arr: Person[]): Person[] {
+console.log(changeNumberInArray(1, [1, 3, 7, 2], 2)); // return [1,2,7,2]
+// ZC-TASK:
+// Shunday function yozing, uni number parametri bolsin
+// va function qabul parametrni selsiy miqdori sifatida qabul qilib uni farenhitga ozgartirib bersin
+// MASALAN: celsiusToFahrenheit(0) return 32
+// To convert temperatures in degrees Celsius to Fahrenheit, multiply by 1.8 (or 9/5) and add 32
+// function celsiusToFahrenheit(degree: number): number {
+//   return degree * 1.8 + 32;
+// }
+// console.log(celsiusToFahrenheit(0)); // return 32
+// ZA-TASK:
+// Shunday function yozing, u array ichidagi objectlarni “age” qiymati boyicha sortlab bersin.
+// MASALAN: sortByAge([{age:23}, {age:21}, {age:13}]) return [{age:13}, {age:21}, {age:23}]
+// function sortByAge(arr: T[]) {
 //   return arr.sort((a, b) => a.age - b.age);
 // }
 
-// const people = [{ age: 23 }, { age: 21 }, { age: 13 }];
-// const sortedPeople = sortByAge(people);
+// console.log(sortByAge([{ age: 23 }, { age: 21 }, { age: 13 }])); // return [{age:13}, {age:21}, {age:23}]
 
-// console.log(sortedPeople);
+// TASK Z
 
+// Shunday function yozing. Bu function sonlardan iborat array
+// qabul qilsin. Function'ning vazifasi array tarkibidagi juft
+// sonlarni topib ularni yig'disini qaytarsin.
 
+// MASALAN:
+// sumEvens([1, 2, 3]); return 2;
+// sumEvens([1, 2, 3, 2]); return 4;
 
-// // Z-TASK
-// console.log("Z-TASK:");
-// function sumEvens(arr: number[]): number {
-//   return arr
-//       .filter((num: number) => num % 2 === 0)
-//       .reduce((sum: number, num: number) => sum + num, 0);
+// Yuqoridagi misolda, bizning funktsiya
+// berilayotgan array tarkibidagi sonlar ichidan faqatgina juft bo'lgan
+// sonlarni topib, ularni hisoblab yig'indisini qaytarmoqda.
+
+// function sumEvens(nums: number[]): number {
+//   return nums.reduce((acc: number, num: number) => {
+//     return num % 2 === 0 ? acc + num : acc;
+//   }, 0);
 // }
 
-// console.log(sumEvens([1, 2, 3]));
-// console.log(sumEvens([1, 2, 3, 2]));
-// console.log(sumEvens([5, 7, 9]));
-// console.log(sumEvens([10, 20, 30]));
+// console.log(sumEvens([1, 2, 3])); // return 2;
+// console.log(sumEvens([1, 2, 3, 2])); // return 4;
 
-
-// import { T } from "./libs/types/common";
-// // Y-TASK:
-// console.log("Y-TASK");
+// Y-TASK:
+// Shunday function yozing, uni 2 ta array parametri bolsin.
+// Function ikkala arrayda ham ishtirok etgan qiymatlarni bir arrayda qaytarsin
+// MASALAN: findIntersection([1,2,3], [3,2,0]) return [2,3]
 // function findIntersection(arr1: number[], arr2: number[]): number[] {
 //   arr1.sort();
 //   arr2.sort();
@@ -63,17 +81,21 @@ console.log(celsiusToFahrenheit(-10));
 //   return result;
 // }
 
+// AI SOLUTION:
+// function findIntersection(arr1: number[], arr2: number[]): number[] {
+//   const set1 = new Set(arr1);
+//   return [...new Set(arr2.filter(num => set1.has(num)))];
+// }
 
 // console.log(findIntersection([1, 2, 3], [3, 2, 0])); // return [2,3]
 // console.log(findIntersection([], [1, 2, 3])); // []
 // console.log(findIntersection([1, 2, 3, 4], [4, 5, 6, 7])); // [4]
 // console.log(findIntersection([1, 7, 1, 2, 2], [2, 2, 7])); // [2, 7]
 
-// // X-TASK:
-// //  Shunday function yozing, uni object va string prapetrlari bolsin.
-// // Function string parametri object ichida necha marotaba takrorlanganligini qaytarsin (nested object bolsa ham sanasin)
-// //  MASALAN: countOccurrences({model: 'Bugatti', steer: {model: 'HANKOOK', size: 30}}, 'model') return 2
-// console.log("X-TASK");
+// X-TASK:
+//  Shunday function yozing, uni object va string parapetrlari bolsin.
+// Function string parametri object ichida necha marotaba takrorlanganligini qaytarsin (nested object bolsa ham sanasin)
+//  MASALAN: countOccurrences({model: 'Bugatti', steer: {model: 'HANKOOK', size: 30}}, 'model') return 2
 // function countOccurrences(obj: T, word: string): number {
 //   return Object.entries(obj).reduce((count, [key, val]) => {
 //     // check key

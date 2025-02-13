@@ -2,45 +2,38 @@ import path from "path";
 import multer from "multer";
 import { v4 } from "uuid";
 
-/** MULTER IMAGE UPLOADER **/
 function getTargetImageStorage(address: any) {
-   return multer.diskStorage({
-      destination: function (req, file, cb) {
-         cb(null, `./uploads/${address}`);
-      },
-      filename: function (req, file, cb) {
-         const extension = path.parse(file.originalname).ext;
-         const randon_name = v4() + extension;
-         cb(null, randon_name);
-      },
-   });
+  return multer.diskStorage({
+    destination: function (req, file, cb) {
+      cb(null, `./uploads/${address}`);
+    },
+    filename: function (req, file, cb) {
+      const extension = path.parse(file.originalname).ext;
+      const random_name = v4() + extension;
+      cb(null, random_name);
+    },
+  });
 }
 
-const makeUploader = (adress: string) => {
-   const storage = getTargetImageStorage(adress);
-   return multer({ storage: storage });
+const makeUploader = (address: string) => {
+  const storage = getTargetImageStorage(address);
+  return multer({ storage: storage });
 };
 
 export default makeUploader;
- 
 
-
-
-function cb(arg0: null, arg1: string) {
-   throw new Error("Function not implemented.");
-}
 /*
 const product_storage = multer.diskStorage({
- destination: function (req, file, cb) {
-  cb(null, "./uploads/products");
+  destination: function (req, file, cb) {
+    cb(null, "./uploads/products");
   },
- filename: function (req, file, cb) {
+  filename: function (req, file, cb) {
     console.log(file);
     const extension = path.parse(file.originalname).ext;
-    const randon_name = v4() + extension;
-    cb(null, randon_name);
- },
+    const random_name = v4() + extension;
+    cb(null, random_name);
+  },
 });
-
-export const uploadProductImage = multer({ storage: product_storage });
 */
+
+// export const uploadProductImage = multer({ storage: product_storage });
