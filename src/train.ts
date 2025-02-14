@@ -1,16 +1,27 @@
-import { T } from "./libs/types/common";
-// ZD-TASK
+// ZE-TASK
 
-function changeNumberInArray(
-  idx: number,
-  arr: number[],
-  new_ele: number
-): number[] {
-  arr[idx] = new_ele;
-  return arr;
+function removeDuplicate(str: string): string {
+  return Array.from(new Set(str)).join('');
 }
 
-console.log(changeNumberInArray(1, [1, 3, 7, 2], 2)); // return [1,2,7,2]
+console.log("Avtomobil:", removeDuplicate("Avtomobil"));
+console.log("Irrigatsiyar:", removeDuplicate("Irrigatsiya"));
+console.log("Intellektional:",removeDuplicate("Intellektional"));
+
+
+// import { T } from "./libs/types/common";
+// // ZD-TASK
+
+// function changeNumberInArray(
+//   idx: number,
+//   arr: number[],
+//   new_ele: number
+// ): number[] {
+//   arr[idx] = new_ele;
+//   return arr;
+// }
+
+// console.log(changeNumberInArray(1, [1, 3, 7, 2], 2)); // return [1,2,7,2]
 // ZC-TASK:
 // Shunday function yozing, uni number parametri bolsin
 // va function qabul parametrni selsiy miqdori sifatida qabul qilib uni farenhitga ozgartirib bersin
