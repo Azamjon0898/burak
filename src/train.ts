@@ -1,12 +1,23 @@
-// ZE-TASK
+// ZF-TASK
 
-function removeDuplicate(str: string): string {
-  return Array.from(new Set(str)).join('');
+function capitalizeWords(str: string): string {
+  return str.split(' ').map(word => {
+      return word.length > 2 ? word.charAt(0).toUpperCase() + word.slice(1) : word;
+  }).join(' ');
 }
 
-console.log("Avtomobil:", removeDuplicate("Avtomobil"));
-console.log("Irrigatsiyar:", removeDuplicate("Irrigatsiya"));
-console.log("Intellektional:",removeDuplicate("Intellektional"));
+console.log(capitalizeWords('name should be a string'));
+
+
+// // ZE-TASK
+
+// function removeDuplicate(str: string): string {
+//   return Array.from(new Set(str)).join('');
+// }
+
+// console.log("Avtomobil:", removeDuplicate("Avtomobil"));
+// console.log("Irrigatsiyar:", removeDuplicate("Irrigatsiya"));
+// console.log("Intellektional:",removeDuplicate("Intellektional"));
 
 
 // import { T } from "./libs/types/common";
