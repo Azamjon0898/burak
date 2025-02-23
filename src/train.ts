@@ -1,12 +1,24 @@
-// ZF-TASK
+// ZG-TASK
 
-function capitalizeWords(str: string): string {
-  return str.split(' ').map(word => {
-      return word.length > 2 ? word.charAt(0).toUpperCase() + word.slice(1) : word;
-  }).join(' ');
+function toSnakeCase(str: string): string {
+  return str
+    .trim()
+    .toLowerCase()
+    .replace(/\s+/g, '_');
 }
 
-console.log(capitalizeWords('name should be a string'));
+console.log(toSnakeCase('name should be a string')); 
+
+
+// // ZF-TASK
+
+// function capitalizeWords(str: string): string {
+//   return str.split(' ').map(word => {
+//       return word.length > 2 ? word.charAt(0).toUpperCase() + word.slice(1) : word;
+//   }).join(' ');
+// }
+
+// console.log(capitalizeWords('name should be a string'));
 
 
 // // ZE-TASK
