@@ -1,13 +1,26 @@
-// ZG-TASK
+// ZH-TASK
 
-function toSnakeCase(str: string): string {
-  return str
-    .trim()
-    .toLowerCase()
-    .replace(/\s+/g, '_');
+function findDisappearedNumbers(arr: number[]): number[] {
+  const maxNum = Math.max(...arr);
+  const fullRange = new Set(Array.from({ length: maxNum }, (_, i) => i + 1));
+  const givenNumbers = new Set(arr);
+  
+  return [...fullRange].filter(num => !givenNumbers.has(num));
 }
 
-console.log(toSnakeCase('name should be a string')); 
+console.log(findDisappearedNumbers([1, 3, 4, 7]));
+
+
+// // ZG-TASK
+
+// function toSnakeCase(str: string): string {
+//   return str
+//     .trim()
+//     .toLowerCase()
+//     .replace(/\s+/g, '_');
+// }
+
+// console.log(toSnakeCase('name should be a string')); 
 
 
 // // ZF-TASK
