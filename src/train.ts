@@ -1,14 +1,27 @@
-// ZH-TASK
+// ZI-TASK
 
-function findDisappearedNumbers(arr: number[]): number[] {
-  const maxNum = Math.max(...arr);
-  const fullRange = new Set(Array.from({ length: maxNum }, (_, i) => i + 1));
-  const givenNumbers = new Set(arr);
-  
-  return [...fullRange].filter(num => !givenNumbers.has(num));
+function delayHelloWorld(message: string): Promise<string> {
+  return new Promise((resolve) => {
+      setTimeout(() => {
+          resolve(message);
+      }, 3000);
+  });
 }
 
-console.log(findDisappearedNumbers([1, 3, 4, 7]));
+delayHelloWorld("Hello World").then(console.log);
+
+
+// // ZH-TASK
+
+// function findDisappearedNumbers(arr: number[]): number[] {
+//   const maxNum = Math.max(...arr);
+//   const fullRange = new Set(Array.from({ length: maxNum }, (_, i) => i + 1));
+//   const givenNumbers = new Set(arr);
+  
+//   return [...fullRange].filter(num => !givenNumbers.has(num));
+// }
+
+// console.log(findDisappearedNumbers([1, 3, 4, 7]));
 
 
 // // ZG-TASK
