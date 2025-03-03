@@ -1,14 +1,28 @@
-// ZI-TASK
+// ZJ-TASK
 
-function delayHelloWorld(message: string): Promise<string> {
-  return new Promise((resolve) => {
-      setTimeout(() => {
-          resolve(message);
-      }, 3000);
-  });
+function reduceNestedArray(arr: any[]): number {
+  return arr.reduce((sum, item) => {
+      if (Array.isArray(item)) {
+          return sum + reduceNestedArray(item);
+      }
+      return sum + (typeof item === 'number' ? item : 0);
+  }, 0);
 }
 
-delayHelloWorld("Hello World").then(console.log);
+console.log(reduceNestedArray([1, [1, 2, [4]]]));
+
+
+// // ZI-TASK
+
+// function delayHelloWorld(message: string): Promise<string> {
+//   return new Promise((resolve) => {
+//       setTimeout(() => {
+//           resolve(message);
+//       }, 3000);
+//   });
+// }
+
+// delayHelloWorld("Hello World").then(console.log);
 
 
 // // ZH-TASK
