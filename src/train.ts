@@ -1,15 +1,32 @@
-// ZJ-TASK
+// ZK-TASK
 
-function reduceNestedArray(arr: any[]): number {
-  return arr.reduce((sum, item) => {
-      if (Array.isArray(item)) {
-          return sum + reduceNestedArray(item);
+function printNumbers(): void {
+  let num = 1;
+  const interval = setInterval(() => {
+      console.log(num);
+      if (num === 5) {
+          clearInterval(interval);
+      } else {
+          num++;
       }
-      return sum + (typeof item === 'number' ? item : 0);
-  }, 0);
+  }, 1000);
 }
 
-console.log(reduceNestedArray([1, [1, 2, [4]]]));
+printNumbers();
+
+
+// // ZJ-TASK
+
+// function reduceNestedArray(arr: any[]): number {
+//   return arr.reduce((sum, item) => {
+//       if (Array.isArray(item)) {
+//           return sum + reduceNestedArray(item);
+//       }
+//       return sum + (typeof item === 'number' ? item : 0);
+//   }, 0);
+// }
+
+// console.log(reduceNestedArray([1, [1, 2, [4]]]));
 
 
 // // ZI-TASK
