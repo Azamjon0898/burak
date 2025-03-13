@@ -1,13 +1,24 @@
-// ZL-TASK
+// ZM-TASK
 
-function stringToKebab(str: string): string {
-  return str
-      .toLowerCase()
-      .replace(/[^a-z0-9]+/g, '-')
-      .replace(/^-+|-+$/g, '');
+function reverseInteger(num: number): number {
+  const reversed = parseInt(num.toString().split('').reverse().join(''));
+  return Math.sign(num) * reversed;
 }
 
-console.log(stringToKebab("I love Kebab"));
+console.log(reverseInteger(123456789));
+console.log(reverseInteger(-987654));
+
+
+// // ZL-TASK
+
+// function stringToKebab(str: string): string {
+//   return str
+//       .toLowerCase()
+//       .replace(/[^a-z0-9]+/g, '-')
+//       .replace(/^-+|-+$/g, '');
+// }
+
+// console.log(stringToKebab("I love Kebab"));
 
 
 // // ZK-TASK
