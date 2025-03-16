@@ -1,12 +1,28 @@
-// ZM-TASK
+// ZN-TASK
 
-function reverseInteger(num: number): number {
-  const reversed = parseInt(num.toString().split('').reverse().join(''));
-  return Math.sign(num) * reversed;
+function rotateArray<T>(arr: T[], index: number): T[] {
+  if (index < 0 || index >= arr.length) {
+      throw new Error("Index out of bounds");
+  }
+  
+  const part1 = arr.slice(-index);
+  const part2 = arr.slice(0, -index);
+  
+  return part1.concat(part2);
 }
 
-console.log(reverseInteger(123456789));
-console.log(reverseInteger(-987654));
+console.log(rotateArray([1, 2, 3, 4, 5, 6], 3));
+
+
+// // ZM-TASK
+
+// function reverseInteger(num: number): number {
+//   const reversed = parseInt(num.toString().split('').reverse().join(''));
+//   return Math.sign(num) * reversed;
+// }
+
+// console.log(reverseInteger(123456789));
+// console.log(reverseInteger(-987654));
 
 
 // // ZL-TASK
