@@ -1,17 +1,78 @@
-// ZN-TASK
+console.log("JavaScript:");
+// @ts-ignore
+function areArraysEqual(arr1, arr2) {
+  if (arr1.length !== arr2.length) return false;
+// @ts-ignore
+  const countElements = (arr) => {
+      const map = new Map();
+      for (const num of arr) {
+          map.set(num, (map.get(num) || 0) + 1);
+      }
+      return map;
+  };
 
-function rotateArray<T>(arr: T[], index: number): T[] {
-  if (index < 0 || index >= arr.length) {
-      throw new Error("Index out of bounds");
+  const map1 = countElements(arr1);
+  const map2 = countElements(arr2);
+
+  if (map1.size !== map2.size) return false;
+
+  for (const [key, value] of map1) {
+      if (map2.get(key) !== value) return false;
   }
-  
-  const part1 = arr.slice(-index);
-  const part2 = arr.slice(0, -index);
-  
-  return part1.concat(part2);
+
+  return true;
 }
 
-console.log(rotateArray([1, 2, 3, 4, 5, 6], 3));
+console.log(areArraysEqual([1, 2, 3], [3, 1, 2]));
+console.log(areArraysEqual([1, 2, 3], [3, 1, 2, 1]));
+console.log(areArraysEqual([1, 2, 3], [4, 1, 2]));
+console.log(areArraysEqual([1, 1, 2], [2, 1, 1]));
+
+
+
+//  ZO-TASK
+
+console.log("ZO-TASK:");
+
+function areParenthesesBalanced(str: string): boolean {
+  let balance = 0;
+
+  for (const char of str) {
+      if (char === '(') {
+          balance++;
+      } else if (char === ')') {
+          balance--;
+      }
+
+      if (balance < 0) {
+          return false;
+      }
+  }
+
+  return balance === 0;
+}
+
+console.log(areParenthesesBalanced("string()ichida(qavslar)soni()balansda")); // true
+console.log(areParenthesesBalanced("((qavslar)to‘g‘rimi")) // false
+console.log(areParenthesesBalanced("())")) // false
+console.log(areParenthesesBalanced("(()())")) // true
+console.log(areParenthesesBalanced("(a + b) * (c - d)")) // true
+
+
+// // ZN-TASK
+
+// function rotateArray<T>(arr: T[], index: number): T[] {
+//   if (index < 0 || index >= arr.length) {
+//       throw new Error("Index out of bounds");
+//   }
+  
+//   const part1 = arr.slice(-index);
+//   const part2 = arr.slice(0, -index);
+  
+//   return part1.concat(part2);
+// }
+
+// console.log(rotateArray([1, 2, 3, 4, 5, 6], 3));
 
 
 // // ZM-TASK
