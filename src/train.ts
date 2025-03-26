@@ -1,62 +1,84 @@
-console.log("JavaScript:");
-// @ts-ignore
-function areArraysEqual(arr1, arr2) {
-  if (arr1.length !== arr2.length) return false;
-// @ts-ignore
-  const countElements = (arr) => {
-      const map = new Map();
-      for (const num of arr) {
-          map.set(num, (map.get(num) || 0) + 1);
-      }
-      return map;
-  };
+// ZQ-TASK
 
-  const map1 = countElements(arr1);
-  const map2 = countElements(arr2);
+function findDuplicates(arr: number[]): number[] {
+  const countMap = new Map<number, number>();
+  const duplicates = new Set<number>();
 
-  if (map1.size !== map2.size) return false;
-
-  for (const [key, value] of map1) {
-      if (map2.get(key) !== value) return false;
+  for (const num of arr) {
+      countMap.set(num, (countMap.get(num) || 0) + 1);
   }
 
-  return true;
-}
-
-console.log(areArraysEqual([1, 2, 3], [3, 1, 2]));
-console.log(areArraysEqual([1, 2, 3], [3, 1, 2, 1]));
-console.log(areArraysEqual([1, 2, 3], [4, 1, 2]));
-console.log(areArraysEqual([1, 1, 2], [2, 1, 1]));
-
-
-
-//  ZO-TASK
-
-console.log("ZO-TASK:");
-
-function areParenthesesBalanced(str: string): boolean {
-  let balance = 0;
-
-  for (const char of str) {
-      if (char === '(') {
-          balance++;
-      } else if (char === ')') {
-          balance--;
-      }
-
-      if (balance < 0) {
-          return false;
+  for (const [num, count] of countMap) {
+      if (count >= 2) {
+          duplicates.add(num);
       }
   }
 
-  return balance === 0;
+  return Array.from(duplicates);
 }
 
-console.log(areParenthesesBalanced("string()ichida(qavslar)soni()balansda")); // true
-console.log(areParenthesesBalanced("((qavslar)to‘g‘rimi")) // false
-console.log(areParenthesesBalanced("())")) // false
-console.log(areParenthesesBalanced("(()())")) // true
-console.log(areParenthesesBalanced("(a + b) * (c - d)")) // true
+console.log(findDuplicates([1, 2, 3, 4, 5, 4, 3, 4]));
+
+
+// console.log("JavaScript:");
+// // @ts-ignore
+// function areArraysEqual(arr1, arr2) {
+//   if (arr1.length !== arr2.length) return false;
+// // @ts-ignore
+//   const countElements = (arr) => {
+//       const map = new Map();
+//       for (const num of arr) {
+//           map.set(num, (map.get(num) || 0) + 1);
+//       }
+//       return map;
+//   };
+
+//   const map1 = countElements(arr1);
+//   const map2 = countElements(arr2);
+
+//   if (map1.size !== map2.size) return false;
+
+//   for (const [key, value] of map1) {
+//       if (map2.get(key) !== value) return false;
+//   }
+
+//   return true;
+// }
+
+// console.log(areArraysEqual([1, 2, 3], [3, 1, 2]));
+// console.log(areArraysEqual([1, 2, 3], [3, 1, 2, 1]));
+// console.log(areArraysEqual([1, 2, 3], [4, 1, 2]));
+// console.log(areArraysEqual([1, 1, 2], [2, 1, 1]));
+
+
+
+// //  ZO-TASK
+
+// console.log("ZO-TASK:");
+
+// function areParenthesesBalanced(str: string): boolean {
+//   let balance = 0;
+
+//   for (const char of str) {
+//       if (char === '(') {
+//           balance++;
+//       } else if (char === ')') {
+//           balance--;
+//       }
+
+//       if (balance < 0) {
+//           return false;
+//       }
+//   }
+
+//   return balance === 0;
+// }
+
+// console.log(areParenthesesBalanced("string()ichida(qavslar)soni()balansda")); // true
+// console.log(areParenthesesBalanced("((qavslar)to‘g‘rimi")) // false
+// console.log(areParenthesesBalanced("())")) // false
+// console.log(areParenthesesBalanced("(()())")) // true
+// console.log(areParenthesesBalanced("(a + b) * (c - d)")) // true
 
 
 // // ZN-TASK
