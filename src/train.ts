@@ -1,23 +1,43 @@
-// ZQ-TASK
+// ZR-TASK
 
-function findDuplicates(arr: number[]): number[] {
-  const countMap = new Map<number, number>();
-  const duplicates = new Set<number>();
+function countNumberAndLetters(input: string): { number: number; letter: number } {
+  let numberCount = 0;
+  let letterCount = 0;
 
-  for (const num of arr) {
-      countMap.set(num, (countMap.get(num) || 0) + 1);
-  }
-
-  for (const [num, count] of countMap) {
-      if (count >= 2) {
-          duplicates.add(num);
+  for (const char of input) {
+      if (/[0-9]/.test(char)) {
+          numberCount++;
+      } else if (/[a-zA-Z]/.test(char)) {
+          letterCount++;
       }
   }
 
-  return Array.from(duplicates);
+  return { number: numberCount, letter: letterCount };
 }
 
-console.log(findDuplicates([1, 2, 3, 4, 5, 4, 3, 4]));
+console.log(countNumberAndLetters("string152%\u00A5"));
+
+
+// // ZQ-TASK
+
+// function findDuplicates(arr: number[]): number[] {
+//   const countMap = new Map<number, number>();
+//   const duplicates = new Set<number>();
+
+//   for (const num of arr) {
+//       countMap.set(num, (countMap.get(num) || 0) + 1);
+//   }
+
+//   for (const [num, count] of countMap) {
+//       if (count >= 2) {
+//           duplicates.add(num);
+//       }
+//   }
+
+//   return Array.from(duplicates);
+// }
+
+// console.log(findDuplicates([1, 2, 3, 4, 5, 4, 3, 4]));
 
 
 // console.log("JavaScript:");
