@@ -1,5 +1,28 @@
+// ZT-TASK
+
+console.log("ZT-TASK:");
+function firstUniqueCharIndex(str: string): number {
+  const charCount: Record<string, number> = {};
+
+  for (const char of str) {
+    charCount[char] = (charCount[char] || 0) + 1;
+  }
+
+  for (let i = 0; i < str.length; i++) {
+    if (charCount[str[i]] === 1) {
+      return i;
+    }
+  }
+
+  return -1;
+}
+console.log(firstUniqueCharIndex("stamp"));
+console.log(firstUniqueCharIndex("aabbc"));
+console.log(firstUniqueCharIndex("aabb"));
+
 // ZS-TASK
 
+console.log("ZS-TASK:");
 function singleNumber(nums: number[]): number {
   return nums.reduce((acc, num) => acc ^ num, 0);
 }
