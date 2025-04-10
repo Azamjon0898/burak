@@ -1,33 +1,57 @@
-// ZT-TASK
+// ZU-TASK
 
-console.log("ZT-TASK:");
-function firstUniqueCharIndex(str: string): number {
-  const charCount: Record<string, number> = {};
+console.log("ZU-TASK");
+function sumOfUnique(nums: number[]): number {
+  const countMap = new Map<number, number>();
 
-  for (const char of str) {
-    charCount[char] = (charCount[char] || 0) + 1;
+  for (const num of nums) {
+    countMap.set(num, (countMap.get(num) || 0) + 1);
   }
 
-  for (let i = 0; i < str.length; i++) {
-    if (charCount[str[i]] === 1) {
-      return i;
+  let sum = 0;
+  for (const [num, count] of countMap) {
+    if (count === 1) {
+      sum += num;
     }
   }
 
-  return -1;
-}
-console.log(firstUniqueCharIndex("stamp"));
-console.log(firstUniqueCharIndex("aabbc"));
-console.log(firstUniqueCharIndex("aabb"));
-
-// ZS-TASK
-
-console.log("ZS-TASK:");
-function singleNumber(nums: number[]): number {
-  return nums.reduce((acc, num) => acc ^ num, 0);
+  return sum;
 }
 
-console.log(singleNumber([4, 2, 1, 2, 1]));
+console.log(sumOfUnique([1, 2, 3, 2]));
+
+
+
+// // ZT-TASK
+
+// console.log("ZT-TASK:");
+// function firstUniqueCharIndex(str: string): number {
+//   const charCount: Record<string, number> = {};
+
+//   for (const char of str) {
+//     charCount[char] = (charCount[char] || 0) + 1;
+//   }
+
+//   for (let i = 0; i < str.length; i++) {
+//     if (charCount[str[i]] === 1) {
+//       return i;
+//     }
+//   }
+
+//   return -1;
+// }
+// console.log(firstUniqueCharIndex("stamp"));
+// console.log(firstUniqueCharIndex("aabbc"));
+// console.log(firstUniqueCharIndex("aabb"));
+
+// // ZS-TASK
+
+// console.log("ZS-TASK:");
+// function singleNumber(nums: number[]): number {
+//   return nums.reduce((acc, num) => acc ^ num, 0);
+// }
+
+// console.log(singleNumber([4, 2, 1, 2, 1]));
 
 
 // // ZR-TASK
